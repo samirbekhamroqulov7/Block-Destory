@@ -1,0 +1,55 @@
+{
+  "name": "block-description",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Block Description - Cross-platform block breaker game",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "latest",
+    "@react-navigation/drawer": "latest",
+    "@react-navigation/native": "7.1.27",
+    "@testing-library/react-native": "latest",
+    "@vercel/analytics": "1.6.1",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "expo": "latest",
+    "expo-constants": "latest",
+    "expo-linking": "latest",
+    "expo-router": "6.0.21",
+    "expo-status-bar": "3.0.9",
+    "lucide-react": "0.562.0",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.83.1",
+    "react-native-gesture-handler": "2.30.0",
+    "react-native-reanimated": "latest",
+    "react-native-safe-area-context": "latest",
+    "react-native-screens": "latest",
+    "react-native-web": "latest",
+    "react-server-dom-webpack": "latest",
+    "tailwind-merge": "3.4.0",
+    "tailwindcss": "^4.1.9"
+  },
+  "devDependencies": {
+    "@types/node": "20.10.5",
+    "@types/react": "19.2.8",
+    "@types/react-dom": "19.2.3",
+    "autoprefixer": "10.4.16",
+    "eslint": "9.0.0",
+    "eslint-config-next": "16.1.1",
+    "postcss": "8.5.6",
+    "tailwindcss-animate": "1.0.7",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
