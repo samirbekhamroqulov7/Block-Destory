@@ -4,7 +4,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 
 // Импортируем GameEngine и определяем константы
-import GameEngine from "../../gameEngine.js"
+import GameEngine from "@block-destroyer/game-engine"
 
 // Константы из gameEngine
 const GRID_WIDTH = 10
@@ -193,3 +193,7 @@ export default function GamePage() {
     </div>
   )
 }
+
+
+
+
