@@ -1,18 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Existing configuration options
-  reactStrictMode: true,
-  swcMinify: true,
-
-  // Updates to be made
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-
-  // /** rest of code here **/
-};
-
-module.exports = nextConfig;
+/** @type {import('next').NextConfig} */ 
+const nextConfig = { 
+  reactStrictMode: true, 
+  swcMinify: false,  // βª«ξη ¥¬ ¤«ο Next.js 14+ 
+  typescript: { 
+    ignoreBuildErrors: true, 
+  }, 
+  images: { 
+    unoptimized: true, 
+  }, 
+} 
+ 
+module.exports = nextConfig; 
