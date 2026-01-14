@@ -1,9 +1,20 @@
 ﻿"use client"
 
 import type React from "react"
-
 import { useState, useEffect, useRef } from "react"
-import { GameEngine, getBlockColor, GRID_WIDTH, GRID_HEIGHT } from \"../../gameEngine.js\"
+
+// Импортируем GameEngine и определяем константы
+import GameEngine from "../../gameEngine.js"
+
+// Константы из gameEngine
+const GRID_WIDTH = 10
+const GRID_HEIGHT = 16
+
+// Функция для цвета блоков
+function getBlockColor(health: number): string {
+  const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6', '#8b5cf6', '#ec4899']
+  return colors[Math.min(health - 1, colors.length - 1)] || colors[0]
+}
 
 export default function GamePage() {
   const [gameEngine] = useState(() => new GameEngine())
@@ -57,7 +68,7 @@ export default function GamePage() {
     setGameState({ ...gameEngine })
   }
 
-  const gameAreaWidth = Math.min(600, window.innerWidth * 0.95)
+  const gameAreaWidth = 600
   const gameAreaHeight = gameAreaWidth * 1.2
   const blockWidth = gameAreaWidth / GRID_WIDTH
   const blockHeight = gameAreaHeight / GRID_HEIGHT
@@ -94,7 +105,7 @@ export default function GamePage() {
           className="text-5xl font-black text-yellow-400 drop-shadow-lg"
           style={{ textShadow: "3px 3px 0px #4DD0E1" }}
         >
-          DESCRIPTION
+          DESTROYER
         </h2>
       </div>
 
@@ -109,7 +120,7 @@ export default function GamePage() {
         }}
       >
         {/* Blocks */}
-        {gameState.blocks.map((block) => (
+        {gameState.blocks && gameState.blocks.map((block) => (
           <div
             key={block.id}
             className="absolute rounded-xl flex items-center justify-center font-bold text-white shadow-lg transition-transform hover:scale-105"
@@ -128,7 +139,7 @@ export default function GamePage() {
         ))}
 
         {/* Balls */}
-        {gameState.balls.map((ball, idx) => (
+        {gameState.balls && gameState.balls.map((ball, idx) => (
           <div
             key={idx}
             className="absolute rounded-full bg-white shadow-lg"
@@ -146,8 +157,8 @@ export default function GamePage() {
         <div
           className="absolute rounded-full bg-cyan-400 shadow-lg transition-all"
           style={{
-            left: gameState.paddle.x * gameAreaWidth,
-            width: gameState.paddle.width * gameAreaWidth,
+            left: gameState.paddle?.x * gameAreaWidth || 0,
+            width: (gameState.paddle?.width || 0.2) * gameAreaWidth,
             top: gameAreaHeight - 25,
             height: 20,
             boxShadow: "0 0 20px rgba(77, 208, 225, 0.8), 0 0 30px rgba(77, 208, 225, 0.5)",
@@ -182,4 +193,3 @@ export default function GamePage() {
     </div>
   )
 }
-
