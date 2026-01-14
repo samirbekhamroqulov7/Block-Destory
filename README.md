@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Block Description - Cross-Platform Block Breaker Game
 
 Addictive block breaker game built with Next.js, Expo, and Tauri. Play on iOS, Android, Web, Windows, and macOS with a single monorepo codebase.
@@ -176,6 +175,3 @@ TAURI_PRIVATE_KEY=your_signing_key
 ## License
 
 MIT
-=======
-# Block-Destory
->>>>>>> 1f896a4193c967e378d73386bdd696868057b76b
